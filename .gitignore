@@ -9,3 +9,4 @@ node_modules
 .bolt
 dist
 node_modules
+.vercel

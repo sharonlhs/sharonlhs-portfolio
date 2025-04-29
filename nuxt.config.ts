@@ -2,13 +2,18 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: false },
-  
+  runtimeConfig: {
+    public: {
+      AMPLITUDE_KEY: process.env.AMPLITUDE_KEY
+    }
+  },
   css: ['~/assets/css/main.css'],
   
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       title: '✨ Portfolio | Sharon Lim',
+
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
