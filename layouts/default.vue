@@ -9,5 +9,12 @@
 </template>
 
 <script setup>
-// Layout component for all pages
+import * as amplitude from '@amplitude/analytics-browser';
+import { autocapturePlugin } from '@amplitude/plugin-autocapture-browser';
+
+amplitude.init(`${process.env.AMPLITUDE_KEY}`, {
+  autocapture: {
+    elementInteractions: true
+  }
+});
 </script>
