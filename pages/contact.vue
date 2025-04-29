@@ -109,6 +109,8 @@ async function handleSubmit() {
     mail.send({
       from: form.value.name,
       to: process.env.SMTP_TO,
+      cc: process.env.SMTP_TO,
+      bcc: process.env.SMTP_TO,
       subject: 'Contact Us Form',
       text: `Name: ${form.value.name}\nEmail: ${form.value.email}\nMessage: ${form.value.message}`,
     })
