@@ -36,6 +36,8 @@ export default defineNuxtConfig({
   mail: {
     message: {
       to: process.env.SMTP_TO,
+      cc: process.env.SMTP_TO,
+      bcc: process.env.SMTP_TO,
     },
     smtp: {
       service: 'gmail',
