@@ -12,22 +12,22 @@ import { useHead, useRuntimeConfig } from '#imports'
 
 const config = useRuntimeConfig()
 
-useHead({
-  script: [
-    {
-      src: `https://cdn.amplitude.com/script/${config.public.AMPLITUDE_KEY}.js`,
-      defer: true,
-    },
-    {
-      children: `
-        window.amplitude.add(window.sessionReplay.plugin({ sampleRate: 1 }));
-        window.amplitude.init('${config.public.AMPLITUDE_KEY}', {
-          fetchRemoteConfig: true,
-          autocapture: true
-        });
-      `,
-      type: 'text/javascript'
-    }
-  ]
-})
+// useHead({
+//   script: [
+//     {
+//       src: `https://cdn.amplitude.com/script/${config.public.AMPLITUDE_KEY}.js`,
+//       defer: true,
+//     },
+//     {
+//       children: `
+//         window.amplitude.add(window.sessionReplay.plugin({ sampleRate: 1 }));
+//         window.amplitude.init('${config.public.AMPLITUDE_KEY}', {
+//           fetchRemoteConfig: true,
+//           autocapture: true
+//         });
+//       `,
+//       type: 'text/javascript'
+//     }
+//   ]
+// })
 </script>

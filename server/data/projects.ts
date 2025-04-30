@@ -6,7 +6,8 @@ export const projects = [
     image: "/images/projects/saveup.png",
     technologies: ["Figma", "Android Studio"],
     link: "https://www.behance.net/gallery/148981927/SaveUP-Budgeting-Application-for-Children",
-    featured: true
+    featured: true,
+    date: "2022-07-26"
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ export const projects = [
     image: "/images/projects/teachease.png",
     technologies: ["Figma"],
     link: "https://www.behance.net/gallery/165198635/TeachEase-Learning-Management-System-UIUX-Case-Study",
-    featured: true
+    featured: true,
+    date: "2023-03-04"
   },
   {
     id: 3,
@@ -24,7 +26,8 @@ export const projects = [
     image: "/images/projects/vigo-travel.png",
     technologies: ["Figma", "HTML", "CSS"],
     link: "https://vigo-travel-website.vercel.app/",
-    featured: false
+    featured: false,
+    date: "2024-06-06"
   },
   {
     id: 4,
@@ -33,10 +36,22 @@ export const projects = [
     image: "/images/projects/spotify-playlist-generator.png",
     technologies: ["Nuxt.js", "Spotify API"],
     link: "https://spotify-playlist-generator-ten.vercel.app/",
-    featured: false
+    featured: false,
+    date: "2024-10-13"
+  },
+  {
+    id: 5,
+    title: "Email Automation",
+    description: "Automatically sends personalized email replies when someone submits a contact form, using Make.com and Resend integration.",
+    image: "/images/projects/auto-reply-emails.png",
+    technologies: ["Automation", "make.com", "Resend"],
+    link: "https://sharonlhs-portfolio.vercel.app/contact",
+    featured: true,
+    date: "2025-04-30"
   }
 ]
 
 export function getProjects(featuredOnly = false) {
-  return featuredOnly ? projects.filter(p => p.featured) : projects
+  const sortedProjects = [...projects].sort((a, b) => new Date(b.date) - new Date(a.date))
+  return featuredOnly ? sortedProjects.filter(p => p.featured) : sortedProjects
 }

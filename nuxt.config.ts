@@ -4,7 +4,9 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   runtimeConfig: {
     public: {
-      AMPLITUDE_KEY: process.env.AMPLITUDE_KEY
+      AMPLITUDE_KEY: process.env.AMPLITUDE_KEY,
+      CONTACT_US_ENDPOINT: process.env.CONTACT_US_ENDPOINT,
+      MY_EMAIL: process.env.MY_EMAIL
     }
   },
   css: ['~/assets/css/main.css'],
@@ -25,7 +27,7 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@nuxt/icon', 'nuxt-mail'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@nuxt/icon', 'nuxt-resend'],
 
   googleFonts: {
     families: {
@@ -37,19 +39,4 @@ export default defineNuxtConfig({
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css'
   },
-
-  mail: {
-    message: {
-      to: process.env.SMTP_TO,
-      cc: process.env.SMTP_TO,
-      bcc: process.env.SMTP_TO,
-    },
-    smtp: {
-      service: 'gmail',
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS
-      }
-    }
-  }
 })
