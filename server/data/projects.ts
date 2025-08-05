@@ -41,14 +41,24 @@ export const projects = [
   },
   {
     id: 5,
-    title: "Email Automation",
-    description: "Automatically sends personalized email replies when someone submits a contact form, using Make.com and Resend integration.",
-    image: "/images/projects/auto-reply-emails.png",
-    technologies: ["Automation", "make.com", "Resend"],
-    link: "https://sharonlhs-portfolio.vercel.app/contact",
+    title: "Nomiodo",
+    description: "A Progressive Web App (PWA) monthly planner that lets you create, drag, and delete your daily to-do list. It can be installed on your device, works offline, and stores data locally for a smooth, app-like experience.",
+    image: "/images/projects/nomiodo.png",
+    technologies: ["Nuxt.js", "PWA", "Local Storage", "Tailwind CSS", "Vue Draggable"],
+    link: "https://nomiodo.vercel.app/",
     featured: true,
-    date: "2025-04-30"
+    date: "2025-05-30"
   }
+  // {
+  //   id: 5,
+  //   title: "Email Automation",
+  //   description: "Automatically sends personalized email replies when someone submits a contact form, using Make.com and Resend integration.",
+  //   image: "/images/projects/auto-reply-emails.png",
+  //   technologies: ["Automation", "make.com", "Resend"],
+  //   link: "https://sharonlhs-portfolio.vercel.app/contact",
+  //   featured: true,
+  //   date: "2025-04-30"
+  // }
 ]
 
 export function getProjects(featuredOnly = false) {

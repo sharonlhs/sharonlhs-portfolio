@@ -96,10 +96,10 @@
 						</p>
 					</div>
 
-					<p class="italic mt-4 px-4 text-[12px] leading-[14px] max-w-[500px] mx-auto text-center text-muted">
+					<!-- <p class="italic mt-4 px-4 text-[12px] leading-[14px] max-w-[500px] mx-auto text-center text-muted">
 						* This contact form uses Resend and Make.com API integration for email
 						automation. However, since I haven't purchased a custom domain yet, I'm currently limited to receiving emails only — I can't send emails to external recipients at the moment.
-					</p>
+					</p> -->
 				</div>
 			</div>
 		</section>
@@ -107,6 +107,8 @@
 </template>
 
 <script setup>
+import emailjs from '@emailjs/browser'
+
 	const config = useRuntimeConfig();
 	const form = ref({
 		name: '',
@@ -119,25 +121,41 @@
 
 	const { data: socialLinks } = await useFetch('/api/social-links');
 
-	async function handleSubmit() {
-		isSubmitting.value = true;
-
-		await sendWebhook();
-
-		isSubmitting.value = false;
-		setTimeout(() => {
-			showSuccess.value = false;
-		}, 5000);
-	}
-
-	const sendWebhook = async () => {
-		await $fetch('/api/contact', {
-			method: 'POST',
-			body: {
-				name: form.value.name,
-				email: form.value.email,
-				message: form.value.message,
-			},
-		});
-	};
+  async function handleSubmit() {
+  isSubmitting.value = true;
+  
+  try {
+    const templateParams = {
+      from_name: form.value.name,
+      from_email: form.value.email,
+      message: form.value.message,
+      to_email: config.public.MY_EMAIL,
+      to_name: 'Sharon', // Your name
+    };
+    
+    await emailjs.send(
+      config.public.service_id,    // Get from EmailJS dashboard
+      config.public.template_id,   // Get from EmailJS dashboard  
+      templateParams,
+      {
+        publicKey: config.public.public_key,
+      }    // Get from EmailJS dashboard
+    );
+    
+    showSuccess.value = true;
+    form.value = { name: '', email: '', message: '' }; // Reset form
+    
+  } catch (error) {
+    console.error('EmailJS error:', error);
+    // Handle error (show error message to user)
+  }
+  
+  isSubmitting.value = false;
+  
+  if (showSuccess.value) {
+    setTimeout(() => {
+      showSuccess.value = false;
+    }, 5000);
+  }
+}
 </script>

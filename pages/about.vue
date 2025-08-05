@@ -5,7 +5,7 @@
         <div class="mx-auto">
           <h1 class="text-4xl font-bold mb-8">About Me</h1>
           <div class="md:flex md:items-start md:gap-8 mb-8">
-            <div class='w-full flex flex-col items-center justify-center gap-8'>
+            <div class='w-full flex flex-col items-center justify-center gap-8 mb-8'>
               <img 
                 src="/images/about/me.jpeg" 
                 alt="Sharon's portrait" 
@@ -37,7 +37,7 @@
                   <h3 class="text-xl font-medium mb-3">Frontend</h3>
                   <ul class="space-y-2">
                     <li>HTML, CSS, JavaScript (ES6+)</li>
-                    <li>Vue.js, React, Nuxt.js</li>
+                    <li>Vue.js, React, Nuxt.js, Next.js</li>
                     <li>Tailwind CSS, SCSS</li>
                     <li>Responsive design</li>
                   </ul>
@@ -46,7 +46,8 @@
                 <div>
                   <h3 class="text-xl font-medium mb-3">Backend</h3>
                   <ul class="space-y-2">
-                    <li>Node.js, NextJs</li>
+                    <li>Node.js, NestJs</li>
+                    <li>Laravel</li>
                     <li>PostgreSQL</li>
                     <li>RESTful APIs</li>
                     <li>Authentication flows</li>

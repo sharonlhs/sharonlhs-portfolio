@@ -6,7 +6,10 @@ export default defineNuxtConfig({
     public: {
       AMPLITUDE_KEY: process.env.AMPLITUDE_KEY,
       CONTACT_US_ENDPOINT: process.env.CONTACT_US_ENDPOINT,
-      MY_EMAIL: process.env.MY_EMAIL
+      MY_EMAIL: process.env.MY_EMAIL,
+      service_id: process.env.EMAIL_SERVICE_ID,
+      template_id: process.env.EMAIL_TEMPLATE_ID,
+      public_key: process.env.EMAIL_PUBLIC_KEY,
     }
   },
   css: ['~/assets/css/main.css'],
