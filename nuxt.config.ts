@@ -30,7 +30,13 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@nuxt/icon', 'nuxt-resend'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts',
+    '@nuxt/icon',
+    'nuxt-resend',
+    '@nuxt/image',
+  ],
 
   googleFonts: {
     families: {

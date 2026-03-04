@@ -10,9 +10,9 @@ export const socialLinks = [
   { name: 'GitHub', url: 'https://github.com/sharonlhs', 
     icon: 'mdi:github'
   },
-  { name: 'LinkedIn', url: 'https://linkedin.com/in/sharonlhs', 
-    icon: 'mdi:linkedin'
-  },
+  // { name: 'LinkedIn', url: 'https://linkedin.com/in/sharonlhs', 
+  //   icon: 'mdi:linkedin'
+  // },
 ];
 
 export function getSocialLinks() {
