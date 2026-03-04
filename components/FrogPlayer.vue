@@ -66,6 +66,13 @@
 </template>
 
 <script setup>
+const props = defineProps({
+  index: {
+    type: Number,
+    default: 0
+  }
+})
+
 const { data: songsData } = await useFetch('/api/get-song')
 
 const isOpen = ref(false)
@@ -73,7 +80,7 @@ const isPlaying = ref(false)
 const elapsed = ref(0)
 let timer = null
 
-const song = computed(() => songsData.value?.[0] ?? null)
+const song = computed(() => songsData.value?.[props.index] ?? null)
 
 // Parse "m:ss" duration string into total seconds
 function parseDuration(str) {

@@ -4,7 +4,7 @@
     <!-- 2026 -->
     <div 
       class="absolute top-2 right-2 text-sm font-semibold tracking-wider">
-      2026
+      {{ new Date().getFullYear() }}
     </div>
 
     <!-- Fireworks -->
@@ -26,7 +26,7 @@
     />
 
     <!-- Frog music -->
-    <FrogPlayer />
+    <FrogPlayer :index='1'/>
 
     <!-- Cook -->
     <NuxtImg
