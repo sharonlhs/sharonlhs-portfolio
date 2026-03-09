@@ -55,7 +55,7 @@
               class="polaroid"
               :style="getCardStyle(i)"
             >
-              <NuxtImg :src="card.src" class="polaroid-img" :class="{ 'polaroid-img--cover': card.cover }" :style="card.rotate ? { transform: `rotate(${card.rotate})` } : {}" />
+              <NuxtImg :src="card.src" class="polaroid-img" :class="{ 'polaroid-img--cover': card.cover }" />
               <span class="polaroid-caption">{{ card.caption }}</span>
             </div>
           </div>
@@ -90,7 +90,7 @@ definePageMeta({ layout: 'creative' })
 const cards = ref([
   { src: '/images/2026/gif/bunny-work.gif', caption: 'grind mode',   cover: false },
   { src: '/images/2026/duck-with-cone.png', caption: 'mood',         cover: false },
-  { src: '/images/2026/guzheng.jpeg',       caption: 'weekends',     cover: true,  rotate: '90deg' },
+  { src: '/images/2026/guzheng.jpeg',       caption: 'weekends',     cover: true },
   { src: '/images/2026/lily.png',           caption: 'lily 🌸',      cover: true  },
   { src: '/images/2026/me.jpeg',            caption: 'sharon lim ✦', cover: true  },
 ])
