@@ -6,7 +6,7 @@
     </main>
     <TheFooter />
   </div>
-  <FrogPlayer :index='0' class="frog-fixed" />
+  <!-- <FrogPlayer :index='0' class="frog-fixed" /> -->
 </template>
 <script setup lang='ts'>
 import { useHead, useRuntimeConfig } from '#imports'

@@ -1,9 +1,10 @@
 <template>
-  <div class="min-h-screen bg-[#3B5BDB]">
-    <main class="flex-grow">
+<div class="min-h-screen bg-[#3B5BDB] md:h-screen md:overflow-hidden">
+    <main class="flex-grow h-full">
       <NuxtPage />
     </main>
   </div>
+    <FrogPlayer :index='0' class="frog-fixed" />
 </template>
 <script setup lang='ts'>
 import { useHead, useRuntimeConfig } from '#imports'

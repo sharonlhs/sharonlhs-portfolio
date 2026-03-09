@@ -33,7 +33,7 @@
       </div>
       <div class="stat-divider" />
       <div class="stat">
-        <span class="stat-num">20+</span>
+        <span class="stat-num">5+</span>
         <span class="stat-label">Projects shipped</span>
       </div>
       <div class="stat-divider" />
